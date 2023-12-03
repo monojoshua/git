@@ -1,0 +1,31 @@
+{% extends 'authentication/nav.html' %}
+{%load static%}
+{%block style%}
+    <link rel="stylesheet" href="{%static 'style.css'%}">
+{%endblock%}
+{% block title%}login{%endblock%}
+{%block content%}
+    {% for  message in messages%}
+    <div class="alert alert-warning alert-dismissable fade show"  role="alert">
+        {{message}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    {% endfor%}
+    <div id="box">
+        <div class="container">
+        <h1>login</h1>
+        <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+        <p class="text-center small">Enter your username &amp; password to login</p>
+        <form method="post" action="{% url 'login' %}">
+            {%csrf_token%}
+            {{ login_form.as_p }}
+        <div id="username">
+        <label for="user id">username: </label>
+        <input type="text" name="username" maxlength="20" placeholder="username" required><br></div>
+        <div id="pword"><label for="password">password: </label>
+        <input type="password" name="password1" minlength="8" maxlength="20" placeholder="password" required><br></div>
+        <div id="button" ><button type='submit' class="btn btn-outline-success btn-sm btn-mr" style="float: right;">login</button></div>
+    </form>
+    </div>
+</div>
+{%endblock%}

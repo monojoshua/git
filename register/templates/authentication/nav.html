@@ -1,0 +1,84 @@
+{% load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}Welcome{%endblock%}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{%static 'welcome.css'%}">
+    {%block style%}
+    
+    {%endblock%}
+</head>
+
+<body class="vh-100 overflow-hidden">
+    <!--nav bar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent">
+        <div class="container">
+            <!--logo-->
+          <a class="navbar-brand fs-4" href="#">Mono_tronics</a>
+          <!--toggle btn-->
+          <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+
+          <!--sidebar-->
+          <div class="sidebar offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <!--sidebar header-->
+            <div class="offcanvas-header text-white border-bottom">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Mono_tronics</h5>
+              <button type="button" class="btn-close-white shadow-none" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <!--sidebar body-->
+            <div class="offcanvas-body d-flex flex-column flex-lg-row p-4 p-lg-0">
+              <ul class="navbar-nav justify-content-center align-items-center fs-5 flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="page" href="{% url 'home'%}">Home</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a class="nav-link" href="#about">About</a>
+                </li>
+                <li class="nav-item mx-2">
+                    <a class="nav-link" href="#services">Services</a>
+                  </li>
+                  <li class="nav-item mx-2">
+                    <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                
+              </ul>
+              <!--login/ sign up-->
+              {% block logs%}
+              <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 ">
+                <a href="{% url 'login'%}"
+                class="text-white"
+                >Login</a>
+                <a href="{% url 'register'%}" 
+                class="text-white text-decoration-none px-3 py-1 rounded-4"
+                style="background-color: #09a344;"
+                >Sign Up</a>
+              </div>
+              {%endblock%}
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!--end nav bar-->
+{%block content%}
+
+{% endblock %}
+
+
+   <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        <p style="color: #fff">welcome</p>
+            <a href="{% url 'login' %}"><button class="btn btn-primary btn-mr btn-sm" type="button">login</button></a>
+            <a href="{% url 'register' %}"><button class="btn btn-primary" style="float: right;" type="button">signup</button></a>
+        
+    </nav>
+    </div>-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+h1{
+    text-align: center;
+    text-shadow: 3px 3px 5px, -3px -3px 5px rgb(211, 211, 211);
+}
+h5{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 200;
+    font-size: 20px;
+    color: #012970;
+}
+p{
+    text-align: center;
+}
+body{
+    background-color: #f6f9ff;
+}
+#box{
+    width: 500px;
+    height: 350px;
+    background-color: #ffffff;
+    border-style: solid;
+    border-width: 3px ;
+    border-color: azure;
+    border-radius: 5px;
+    box-shadow: 3px 3px 20px , -3px -3px 20px #f6f9ff;
+    margin-top: 16%;
+    margin-left: 37.5%;
+    
+    
+}
+#username{
+    margin-left: 22%;
+    margin-bottom: 8px;
+}
+input{
+    display: inline-block;
+    width: 50%;
+    padding: 3px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+#pword{
+    margin-left: 22%;
+    margin-bottom: 8px;
+}
+.btn-outline-success{
+    border-radius: 5px;
+    padding: 3px;
+    cursor: pointer;
+    margin-left: 66%;
+    margin-top: 2%;
+}
