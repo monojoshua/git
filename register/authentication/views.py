@@ -72,16 +72,17 @@ def login_user(request):
 
         if user is not None:
             login(request, user)
+            messages.success(request, 'you are successfully logged in')
             return redirect('home')
 
         else:
             messages.error(request, 'Incorrect username or password')
-            return redirect('login')
+            return redirect('welcome')
 
 
     return render(request, 'authentication/login.html')
 
-@login_required(login_url="login")
+@login_required(login_url="welcome")
 def home(request):
     return render(request, 'authentication/home.html')
 
@@ -89,7 +90,7 @@ def home(request):
 def logout_user(request):
     logout(request)
     messages.success(request, 'you are successfully logged out')
-    return redirect('login')
+    return redirect('welcome')
 
 def nav(request):
     return render(request, 'authentication/nav.html')

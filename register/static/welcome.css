@@ -21,3 +21,9 @@ body{
 .c-item{
     height: 480px;
 }
+form{
+    position: absolute;
+    right: 50px;
+    width: 250px;
+    height: 250px;
+}

@@ -16,7 +16,7 @@
         <h1>login</h1>
         <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
         <p class="text-center small">Enter your username &amp; password to login</p>
-        <form method="post" action="{% url 'login' %}">
+        <form method="post" action="{% %}">
             {%csrf_token%}
             {{ login_form.as_p }}
         <div id="username">

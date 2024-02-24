@@ -53,19 +53,64 @@
               <!--login/ sign up-->
               {% block logs%}
               <div class="d-flex flex-column flex-lg-row justify-content-center align-items-center gap-3 ">
-                <a href="{% url 'login'%}"
+                <div class="container">
+                <div class="dropdown">
+                  <button type="button" class="btn btn-success btn-sm dropdown-toggle"
+                  data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="outeside">login
+                  </button>
+                    <form method="post" action="{% url 'login' %}"
+                    class="dropdown-menu dropdown-menu-dark p-3" style="width: 250px; right: 50px; height: 300px;">
+                      {%csrf_token%}
+                      {{ login_form.as_p }}
+                      
+                      <div class="form-group" id="username">
+                        <label for="user id">Username</label>
+                        <input type="text" class="form-control" name="username" placeholder="username" required>
+                      </div>
+                      <div class="form-group" id="pword">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" name="password1" placeholder="Password" required>
+                      </div>
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="dropdownCheck2">
+                        <label class="form-check-label" for="dropdownCheck2">
+                          Remember me
+                        </label>
+                      </div>
+                      <button type="submit" class="btn btn-success">Sign in</button>
+                      <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{%url 'register' %}">New around here? Sign up</a>
+                    <a class="dropdown-item" href="#">Forgot password?</a>
+                  </div>
+                    </form>
+
+                    <!--<div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">New around here? Sign up</a>
+                    <a class="dropdown-item" href="#">Forgot password?</a>
+                  </div>-->
+                  </div>
+                  </div>
+                  </div>
+                <!--<a href="{% url 'login'%}"
                 class="text-white"
-                >Login</a>
+                >Login</a> 
+              </div>
                 <a href="{% url 'register'%}" 
                 class="text-white text-decoration-none px-3 py-1 rounded-4"
                 style="background-color: #09a344;"
                 >Sign Up</a>
-              </div>
+              </div>-->
               {%endblock%}
             </div>
           </div>
         </div>
       </nav>
+      {% for  message in messages%}
+        <div class="alert alert-warning alert-dismissable fade show"  role="alert">
+            {{message}}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor%}
       <!--end nav bar-->
 {%block content%}
 
