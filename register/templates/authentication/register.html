@@ -1,7 +1,9 @@
 {% extends 'authentication/nav.html' %}
+{%load widget_tweaks %}
 {%load static%}
 {%block style%}
-    <link rel="stylesheet" href="{%static 'reg.css'%}">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="{%static 'form.css'%}">
 {%endblock%}
 {% block title%}sign up{%endblock%}
 {%block content%}
@@ -9,31 +11,53 @@
 <h5>{{message}}</h5>
 {% endfor %}
 <div id="box">
-    <h1>REGISTER BELOW</h1>
-    <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
-    <form method="POST" action="{% url 'register' %}">
+    <form method="POST" action="{% url 'register' %}" style="color: whitesmoke; background-color: rgb(50, 49, 49); 
+    height: fit-content; padding: 25px;">
         {%csrf_token%}
         <div>
-        <span><label for="username">username: </label></span>
-        {{form.username}}<br>
-        <span><label for="first_name">first name: </label></span>
-        {{form.first_name}}<br>
-        <span><label for="last_name">last name: </label></span>
-        {{form.last_name}}<br>
-        <!--<input type="text" id="username" name="username" placeholder="username" maxlength="15" required>-->
-        <span><label for="email">email:</label></span>
-        {{form.email}}<br>
-        <!--<input type="email" id="email" name='email' placeholder="email" required>-->
-        <span><label for="password1">password: </label></span>
-        {{form.password1}}<br>
-        <!--<input type="password" id="password" name="password" placeholder="password" minlength="8" maxlength="20" required>-->
-        <span><label for="password2">repeat password: </label></span>
-        {{form.password2}}<br>
+        <h6 class="card-title text-center pb-0 fs-5">Create an Account here!</h6>
+        <div class="form-group">
+            {{form.username}}
+            <label for="username">Username </label>
+        </div>
+      
+        <div class="form-group">
+        {{form.first_name}}
+        <label for="first_name">First name </label>
+        </div>
+        
+        <div class="form-group">
+        {{form.last_name}}
+        <label for="last_name">Last name </label>
+        </div>
+        
+        <div class="form-group">
+                    <!--<input type="text" id="username" name="username" placeholder="username" maxlength="15" required>-->
+        {{form.email}}
+        <label for="email">Email</label>
+        </div>
+
+        <div class="form-group">
+                    <!--<input type="email" id="email" name='email' placeholder="email" required>-->
+        {{form.password1}}
+        <label for="password1">Password </label>
+        </div>
+
+        <div class="form-group">
+                    <!--<input type="password" id="password" name="password" placeholder="password" minlength="8" maxlength="20" required>-->
+        {{form.password2}}
+        <label for="password2">Repeat Password </label>
+        </div>
+
+
         <!--<input type="password" id="repassword" name="repassword" placeholder="repeat password" minlength="8" maxlength="20" required>-->
-    <div id="button">
-        <button type="submit" id="btn">signup</button>
+    <div id="button" class="form-group" style="margin-top: 15px;">
+        <button type="submit" id="btn" class="btn btn-primary btn-sm">submit</button>
     </div>
         </div>
     </form>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+<script type="text/javascript" src="{% static 'register.js' %}"></script>
 {%endblock%}

@@ -11,12 +11,12 @@ from django.contrib import messages
 # Create your views here.
 
 class RegistrationForm(UserCreationForm):
-    username = forms.CharField(widget=forms.TextInput(attrs={'placeholder': '@username', 'min_length': '5'}))
-    first_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'First Name'}))
-    last_name = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Last Name'}))
-    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Enter password'}))
-    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder': 'Confirm password'}))
-    email = forms.EmailField(widget=forms.TextInput(attrs={'placeholder': 'Enter your email'}))
+    username = forms.CharField(widget=forms.TextInput(attrs={'min_length': '5', 'class': 'form-control', 'id': 'username'}))
+    first_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'id': 'first_name'}))
+    last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'id': 'last_name'}))
+    password1 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'id':'password1'}))
+    password2 = forms.CharField(widget=forms.PasswordInput(attrs={'class': 'form-control', 'id':'password2'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'form-control', 'id':'email'}))
 
     class Meta:
         model = User
