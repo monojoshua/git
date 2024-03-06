@@ -1,0 +1,58 @@
+.form-group{
+    position: relative;
+    background: transparent;
+    border: none;
+}
+
+.form-control{
+    height: 40px !important;
+    margin-top: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: none;
+    font-size: 14px;
+    font-weight: normal;
+    color:#CCC;
+    background: transparent;
+}
+
+.form-control:focus,
+.form-control:valid{
+    box-shadow: none;
+    background: transparent;
+    color:#CCC;
+    outline: none;
+    border-color: #04c748;
+}
+
+label{
+    position: absolute; 
+    left: 10px;
+    top: 10px;
+    font-size: 14px;
+    transition: all 0.5s;
+    font-weight: normal;
+    color: #999;
+}
+
+.form-control:focus ~ label,
+.form-control:valid ~ label {
+    left: 5px;
+    top: -10px;
+    background: rgb(50, 49, 49);
+    border-left: 1px solid #04c748;
+    border-right: 1px solid #04c748;
+    padding: 0 5px;
+    color: #04c748;
+    font-size: 0.7em;
+}
+label.active{
+    left: 5px;
+    top: -10px;
+    background: rgb(50, 49, 49);
+    border-left: 1px solid #04c748;
+    border-right: 1px solid #04c748;
+    padding: 0 5px;
+    color: #04c748;
+    font-size: 0.7em;
+}
